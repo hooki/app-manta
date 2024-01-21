@@ -2097,7 +2097,7 @@ parser_error_t _readMethod_V24(
     case 1282: /* module 5 call 2 */
         CHECK_ERROR(_readMethod_balances_force_transfer_V24(c, &method->nested.balances_force_transfer_V24))
         break;
-    case 1283: /* module 5 call 3 */
+    case 2563: /* module 5 call 3 */
         CHECK_ERROR(_readMethod_balances_transfer_keep_alive_V24(c, &method->nested.balances_transfer_keep_alive_V24))
         break;
     case 1284: /* module 5 call 4 */
@@ -2900,7 +2900,7 @@ parser_error_t _readMethod_V24(
 const char* _getMethod_ModuleName_V24(uint8_t moduleIdx)
 {
     switch (moduleIdx) {
-    case 5:
+    case 10:
         return STR_MO_BALANCES;
     case 7:
         return STR_MO_STAKING;
@@ -2988,7 +2988,7 @@ const char* _getMethod_Name_V24(uint8_t moduleIdx, uint8_t callIdx)
         return STR_ME_TRANSFER_ALLOW_DEATH;
     case 1282: /* module 5 call 2 */
         return STR_ME_FORCE_TRANSFER;
-    case 1283: /* module 5 call 3 */
+    case 2563: /* module 5 call 3 */
         return STR_ME_TRANSFER_KEEP_ALIVE;
     case 1284: /* module 5 call 4 */
         return STR_ME_TRANSFER_ALL;
@@ -3540,7 +3540,7 @@ uint8_t _getMethod_NumItems_V24(uint8_t moduleIdx, uint8_t callIdx)
         return 2;
     case 1282: /* module 5 call 2 */
         return 3;
-    case 1283: /* module 5 call 3 */
+    case 2563: /* module 5 call 3 */
         return 2;
     case 1284: /* module 5 call 4 */
         return 2;
@@ -4098,7 +4098,7 @@ const char* _getMethod_ItemName_V24(uint8_t moduleIdx, uint8_t callIdx, uint8_t 
         default:
             return NULL;
         }
-    case 1283: /* module 5 call 3 */
+    case 2563: /* module 5 call 3 */
         switch (itemIdx) {
         case 0:
             return STR_IT_dest;
@@ -6332,7 +6332,7 @@ parser_error_t _getMethod_ItemValue_V24(
         default:
             return parser_no_data;
         }
-    case 1283: /* module 5 call 3 */
+    case 2563: /* module 5 call 3 */
         switch (itemIdx) {
         case 0: /* balances_transfer_keep_alive_V24 - dest */;
             return _toStringAccountIdLookupOfT(

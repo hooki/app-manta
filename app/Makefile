@@ -60,13 +60,13 @@ DEFINES += APP_STANDARD
 ifneq ($(TARGET_NAME),TARGET_NANOS)
 DEFINES += SUBSTRATE_PARSER_FULL
 endif
-APPNAME = "Polkadot"
+APPNAME = "Manta"
 APPPATH = "44'/354'" --path "44'/434'"
 
 else ifeq ($(COIN),DOT_XL)
 # XL app configuration
 DEFINES += APP_STANDARD SUBSTRATE_PARSER_FULL
-APPNAME = "Polkadot XL"
+APPNAME = "Manta XL"
 APPPATH = "44'/354'" --path "44'/434'"
 
 else

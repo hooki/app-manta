@@ -26,7 +26,7 @@ parser_error_t _readMethod(
     pd_Method_t* method)
 {
     switch (c->tx_obj->transactionVersion) {
-    case 24:
+    case 7:
         return _readMethod_V24(c, moduleIdx, callIdx, &method->V24);
     case 23:
         return _readMethod_V23(c, moduleIdx, callIdx, &method->V23);
@@ -38,7 +38,7 @@ parser_error_t _readMethod(
 uint8_t _getMethod_NumItems(uint32_t transactionVersion, uint8_t moduleIdx, uint8_t callIdx)
 {
     switch (transactionVersion) {
-    case 24:
+    case 7:
         return _getMethod_NumItems_V24(moduleIdx, callIdx);
     case 23:
         return _getMethod_NumItems_V23(moduleIdx, callIdx);
@@ -50,7 +50,7 @@ uint8_t _getMethod_NumItems(uint32_t transactionVersion, uint8_t moduleIdx, uint
 const char* _getMethod_ModuleName(uint32_t transactionVersion, uint8_t moduleIdx)
 {
     switch (transactionVersion) {
-    case 24:
+    case 7:
         return _getMethod_ModuleName_V24(moduleIdx);
     case 23:
         return _getMethod_ModuleName_V23(moduleIdx);
@@ -62,7 +62,7 @@ const char* _getMethod_ModuleName(uint32_t transactionVersion, uint8_t moduleIdx
 const char* _getMethod_Name(uint32_t transactionVersion, uint8_t moduleIdx, uint8_t callIdx)
 {
     switch (transactionVersion) {
-    case 24:
+    case 7:
         return _getMethod_Name_V24(moduleIdx, callIdx);
     case 23:
         return _getMethod_Name_V23(moduleIdx, callIdx);
@@ -74,7 +74,7 @@ const char* _getMethod_Name(uint32_t transactionVersion, uint8_t moduleIdx, uint
 const char* _getMethod_ItemName(uint32_t transactionVersion, uint8_t moduleIdx, uint8_t callIdx, uint8_t itemIdx)
 {
     switch (transactionVersion) {
-    case 24:
+    case 7:
         return _getMethod_ItemName_V24(moduleIdx, callIdx, itemIdx);
     case 23:
         return _getMethod_ItemName_V23(moduleIdx, callIdx, itemIdx);
@@ -88,7 +88,7 @@ parser_error_t _getMethod_ItemValue(uint32_t transactionVersion, pd_Method_t* m,
     uint8_t pageIdx, uint8_t* pageCount)
 {
     switch (transactionVersion) {
-    case 24:
+    case 7:
         return _getMethod_ItemValue_V24(&m->V24, moduleIdx, callIdx, itemIdx, outValue,
             outValueLen, pageIdx, pageCount);
     case 23:
@@ -102,7 +102,7 @@ parser_error_t _getMethod_ItemValue(uint32_t transactionVersion, pd_Method_t* m,
 bool _getMethod_ItemIsExpert(uint32_t transactionVersion, uint8_t moduleIdx, uint8_t callIdx, uint8_t itemIdx)
 {
     switch (transactionVersion) {
-    case 24:
+    case 7:
         return _getMethod_ItemIsExpert_V24(moduleIdx, callIdx, itemIdx);
     case 23:
         return _getMethod_ItemIsExpert_V23(moduleIdx, callIdx, itemIdx);
@@ -114,7 +114,7 @@ bool _getMethod_ItemIsExpert(uint32_t transactionVersion, uint8_t moduleIdx, uin
 bool _getMethod_IsNestingSupported(uint32_t transactionVersion, uint8_t moduleIdx, uint8_t callIdx)
 {
     switch (transactionVersion) {
-    case 24:
+    case 7:
         return _getMethod_IsNestingSupported_V24(moduleIdx, callIdx);
     case 23:
         return _getMethod_IsNestingSupported_V23(moduleIdx, callIdx);
